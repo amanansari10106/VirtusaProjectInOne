@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <style>
+        #footer {
+            height: 4rem;
+            background-color: #9b9191;
+
+        }
+
+        /* #footer-parent{
+      display: block;
+      position: fixed;
+      left: 0px;
+      bottom:0px;
+      width: 100%;
+    } */
+        .center-div {
+            display: flex;
+            justify-content: center;
+        }
+
+        .sr {
+            display: none;
+        }
+
+        .islogin a {
+            color: white !important;
+        }
+
+        .islogin {
+            color: white;
+        }
+
+        .islogin a {
+            color: rgb(241, 67, 67) !important;
+        }
+    </style>
+    <style>
+        .head1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5rem;
+            margin-top: .5rem;
+            /* background-color: #f7f7f7; */
+            background-color: #d1d1d1;
+            border-radius: .3rem;
+            padding-left: .5rem;
+        }
+
+        #top {
+            width: 90%;
+            margin: auto;
+            /* padding-top: .001rem; */
+            background: #e5e5e8;
+            padding: 1rem;
+        }
+
+        #output {
+            background-color: black;
+            color: white;
+            width: 100%;
+            padding: 1rem;
+
+        }
+
+        #code {
+            width: 100%;
+            padding: 2rem 2rem;
+            font-weight: 600;
+            font-size: 109%;
+            border: 2px solid black;
+            border-radius: .5rem;
+            /*             background-color: rgb(0, 0, 218); */
+            color: black;
+
+            font-family: 'Merriweather', serif;
+            font-weight: 800;
+
+        }
+
+        #inp {
+            width: 100%;
+            height: 80%;
+            border: 2px solid black;
+            border-radius: .5rem;
+            padding: 1rem;
+        }
+
+        #codediv {
+            width: 100%;
+            display: flex;
+            /* margin: auto; */
+
+        }
+
+        .combo {
+            display: flex;
+
+        }
+
+        #odiv {
+            width: 70%;
+
+        }
+
+        #inpdiv {
+            width: 30%;
+
+        }
+
+        #output {
+            border: 2px solid black;
+            height: 80%;
+            border-radius: .5rem;
+            padding: .5rem 1rem;
+            width: 100%;
+        }
+
+        #run,
+        #save {
+            width: 10rem;
+            border: 2px solid black;
+            border-radius: .4rem;
+            background-color: #d1d1d1;
+
+
+        }
+
+        #numbering p {
+            padding: 0px !important;
+            margin: 0px !important;
+            font-weight: 600;
+            font-size: 109%;
+        }
+
+        #numbering {
+            padding-top: 2rem;
+            display: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding: 35%;
+        }
+
+        #fnamediv {
+            display: none;
+        }
+
+        #mode {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body id="body-id">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="nav">
+        <a class="navbar-brand" href="#"><img
+                src="https://2.bp.blogspot.com/-SvhC7wlAp_o/XjxkUYbiYcI/AAAAAAAAEME/umI_0ToyWHkJTsa6ep3LIVJ3x4Yf5m7uQCK4BGAYYCw/s113/dataset-card.jpg"
+                style="width: 2rem; height: 2rem;" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active" id="home">
+                    <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item" id="showall">
+                    <!--                     <a class="nav-link" href="{% url 'allfileview' %}">Show All Files</a> -->
+                </li>
+                <li class="nav-item" id="create">
+                    <!--                     <a class="nav-link" href="{% url 'index' %}">Create New File</a> -->
+                </li>
+                <li class="nav-item">
+                    <!--                     <a class="nav-link sr" id="sr-id" href="#">Search Result</a> -->
+                </li>
+                <li class="nav-item dropdown" style="display: none;">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item" style="display: none;">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" action="" method="POST">
+                <!-- {% csrf_token %} -->
+                <!-- <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+
+
+                <!--                 <span class="islogin"><a href="#">Login/Signup</a></span> -->
+
+                <!-- <p>login</p> -->
+            </form>
+        </div>
+    </nav>
+
+    <div id="top">
+        <!-- {% csrf_token %} -->
+        <div>
+            <h3 class="head1">Website to demonstrate my code running API's</h3>
+        </div>
+
+        <!-- <br> -->
+        <button id="run" onclick="inpb()" class="freeze">run</button>
+        <!--         <select name="cars" id="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="python">python</option>
+            <option value="audi">Audi</option>
+        </select> -->
+        <br>
+        <!--         <strong> Note: If you want to save the file frst <a href="{% url 'loginview' %}">login</a> then start coding
+            </a></strong>
+ -->
+        <!-- <div><p id="message">  </p></div> -->
+        <br>
+        <br>
+        <div id="scombo">
+            <div id="codediv">
+                <div id="numbering">
+                    <p>1</p>
+                    <p>2</p>
+                    <p>5</p>
+                    <p>4</p>
+                    <p>5</p>
+                    <p>6</p>
+                </div>
+                <textarea name="code" id="code" cols="30" rows="10" onkeypress="tab(event)" class="freeze">#include<iostream>
+ 
+        using namespace std;
+
+        int main()
+        {
+            // prints hello world
+            cout<<"Hello World";
+             
+            return 0;
+        }
+    </textarea>
+            </div>
+            <div class="combo">
+                <div id="inpdiv">
+                    <!-- <input type="text" id="inp"> -->
+                    <textarea name="inp" id="inp" placeholder="Give your input here" class="freeze"></textarea>
+                </div>
+                <!-- <button id="inprun" onclick="inpb()">send input </button> -->
+                <div id="odiv">
+                    <textarea name="output" id="output" cols="30" rows="10" onkeydown="" placeholder="OUTPUT" readonly
+                        class="freeze"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="mode" value="new">
+</body>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+            let navheight = document.getElementById("nav").offsetHeight;
+            document.getElementById("top").style.marginTop = navheight + "px";
+        }, 10)
+
+    });
+</script>
+
+<script>
+    function myFunction() {
+        var element = document.getElementById("myDIV");
+
+        element.classList.remove("mystyle");
+    }
+</script>
+
+
+
+<script>
+    // function inpb2() {
+    //     document.querySelector("#run").innerHTML = "running";
+    //     document.querySelector("#run").disabled = true;
+    //     document.querySelectorAll(".freeze").forEach((elem) => {
+    //         elem.disabled = true;
+    //     })
+    //     // let url = "/c-run/api/run/inp/"
+    //     // let url = "http://127.0.0.1:8000/c-run/api/run/inp/"
+    //     let url = "https://aman101012.pythonanywhere.com/c-run/api/run/inp/"
+    //     fetch(url, {
+    //         method: 'POST',
+    //         body: JSON.stringify({
+    //             title: 'New Pirate Captain',
+    //             body: 'Arrrrrr-ent you excited?',
+    //             userId: 3,
+    //             language: "c++",
+    //             code: document.querySelector("#code").value,
+    //             input: document.querySelector("#inp").value
+    //         }),
+    //         headers: {
+    //             'Content-type': 'application/json; charset=UTF-8',
+    //             'X-CSRFToken': '{{ csrf_token }}'
+    //         }
+    //     }).then(function (response) {
+    //         if (response.ok) {
+    //             // console.log(response.status);
+    //             return response.json();
+    //         }
+    //         return Promise.reject(response);
+    //     }).then(function (data) {
+    //         document.querySelector("#output").value = data["output"];
+    //         document.querySelector("#output").scrollIntoView();
+    //         document.querySelector("#run").innerHTML = "run";
+    //         document.querySelector("#run").removeAttribute('disabled');
+    //         document.querySelectorAll(".freeze").forEach((elem) => {
+    //             elem.removeAttribute('disabled');
+    //         })
+    //         // console.log(data);
+    //     }).catch(function (error) {
+    //         console.warn('Something went wrong.', error);
+    //         document.querySelector("#output").value = "Some server error occured";
+    //         document.querySelector("#run").innerHTML = "run";
+    //         document.querySelector("#run").removeAttribute('disabled');
+    //         document.querySelectorAll(".freeze").forEach((elem) => {
+    //             elem.removeAttribute('disabled');
+    //         })
+    //     });
+    // }
+    // console.log($("body").html);
+    function inpb() {
+        document.querySelector("#run").innerHTML = "running";
+        document.querySelector("#run").disabled = true;
+        document.querySelectorAll(".freeze").forEach((elem) => {
+            elem.disabled = true;
+        })
+        var url = "https://aman101012.pythonanywhere.com/c-run/api/run/inp/"
+        $.ajax({
+            url: "https://aman101012.pythonanywhere.com/c-run/api/run/inp/",
+            dataType: "json",
+            type: "Post",
+            data: {
+                language: "c++",
+                code: $("#code").val(),
+                input: $("#inp").val()
+            },
+            success: function (data) {
+                $("#output").val(data["output"]);
+                document.querySelector("#output").scrollIntoView();
+                $("#run").html("run");
+                $("#run").removeAttr('disabled');
+                document.querySelectorAll(".freeze").forEach((elem) => {
+                    elem.removeAttribute('disabled');
+                })
+
+            },
+            error: function (xhr, exception) {
+                // console.log(xhr)
+                console.warn('Something went wrong.', error);
+                $("#output").val("Some server error occured");
+                $("#run").html("run");
+                $("#run").removeAttr("disabled");
+                document.querySelectorAll(".freeze").forEach((elem) => {
+                    elem.removeAttribute('disabled');
+                })
+            }
+        })
+    }
+
+</script>
+
+
+</html>

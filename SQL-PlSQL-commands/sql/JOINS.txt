@@ -1,0 +1,27 @@
+SELECT Students.stuID, Teachers.subjectName
+FROM Students
+INNER JOIN Teachers ON Students.TeacherID = Teachers.TeacherID;
+
+
+
+SELECT Students.stuID, Teachers.subjectName, Shippers.ShipperName
+FROM ((Students
+INNER JOIN Teachers ON Students.TeachersID = Teachers.TeacherID)
+INNER JOIN Shippers ON Students.ShipperID = Shippers.ShipperID);
+
+
+SELECT Teachers.subjectName, Students.stuID
+FROM Teachers
+LEFT JOIN Students ON Teachers.TeacherID = Students.TeacherID
+ORDER BY Teachers.subjectName;
+
+SELECT Students.stuID, Employees.LastName, Employees.FirstName
+FROM Students
+RIGHT JOIN Employees ON Students.EmployeeID = Employees.EmployeeID
+ORDER BY Students.stuID;
+
+SELECT Teachers.subjectName, Students.stuID
+FROM Teachers
+FULL OUTER JOIN Students ON Teachers.TeacherID=Students.TeacherID
+ORDER BY Teachers.subjectName;
+

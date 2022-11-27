@@ -1,0 +1,15 @@
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.csproj.AssemblyReference.cache
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.GeneratedMSBuildEditorConfig.editorconfig
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.AssemblyInfoInputs.cache
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.AssemblyInfo.cs
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.csproj.CoreCompileInputs.cache
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\bin\Debug\net6.0\testconfig.exe
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\bin\Debug\net6.0\testconfig.deps.json
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\bin\Debug\net6.0\testconfig.runtimeconfig.json
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\bin\Debug\net6.0\testconfig.dll
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\bin\Debug\net6.0\testconfig.pdb
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.dll
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\refint\testconfig.dll
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.pdb
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\testconfig.genruntimeconfig.cache
+D:\all tutorial\learning\Virtusa\ccopy\Test-Codes-dotNet\obj\Debug\net6.0\ref\testconfig.dll

@@ -1,0 +1,63 @@
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255) NOT NULL,
+
+    PRIMARY KEY(rollno)
+    
+);
+
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL PRIMARY KEY,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255) NOT NULL,
+    
+);
+
+FOR MULTIPLE COLUMNS 
+
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL PRIMARY KEY,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255) NOT NULL,
+    CONSTRAINT PK_student PRIMARY KEY (rollno,stu_addresss)
+);
+
+ALTER TABLE student
+ADD PRIMARY KEY 
+
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL PRIMARY KEY,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255) NOT NULL,
+    TeacherID int,
+    CONSTRAINT PK_student PRIMARY KEY (rollno,stu_addresss),
+    FOREIGN KEY (TeacherID) REFERENCES students(TeacherID)
+);
+
+
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL PRIMARY KEY,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255) NOT NULL,
+    TeacherID int FOREIGN KEY REFERENCES Teachers(TeacherID),
+    CONSTRAINT PK_student PRIMARY KEY (rollno,stu_addresss),
+);
+
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL PRIMARY KEY,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255) NOT NULL,
+    TeacherID int CHECK (TeacherID>=10),
+    CONSTRAINT PK_student PRIMARY KEY (rollno,stu_addresss),
+);
+
+
+CREATE TABLE student (
+    stu_name varchar(255) NOT NULL PRIMARY KEY,
+    rollno int NOT NULL UNIQUE ,
+    stu_address varchar(255)  DEFAULT 'HOMELESS',
+    TeacherID int,
+    CONSTRAINT PK_student PRIMARY KEY (rollno,stu_addresss),
+    CHECK (TeacherID>=10)
+);

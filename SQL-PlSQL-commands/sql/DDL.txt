@@ -1,0 +1,20 @@
+
+CREATE DATABASE schooldata;
+
+DROP DATABASE schooldata;
+
+CREATE TABLE student (
+    name varchar(255),
+    rollno int,
+    address varchar(255),
+);
+
+
+DROP TABLE student;
+
+ALTER TABLE table_name
+ADD extracolumn varchar(255);
+
+ALTER TABLE table_name
+DROP COLUMN extratable;
+
